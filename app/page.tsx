@@ -19,7 +19,7 @@ export default function Page() {
           <div className="mt-4 flex items-center gap-4">
             {/* TODO : ouvrir la modale d'inscription (pas encore designée) */}
             <Button className="h-auto rounded-full bg-black px-4 py-2 text-[10px] leading-[normal] font-medium text-white hover:bg-black/80">
-              M’avertir au prochain drop
+              Notify me of the next drop
             </Button>
             <a
               href="https://www.instagram.com/qstnmrk__/"
