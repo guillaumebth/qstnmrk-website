@@ -112,34 +112,36 @@ function IntroScreen({
   return (
     <div
       onPointerMove={onPointerMove}
+      // Un clic n'importe où sur l'écran fait entrer dans le site
+      onClick={onEnter}
       className={cn(
-        "fixed inset-0 z-50 overflow-y-auto bg-paper text-black",
+        "fixed inset-0 z-50 cursor-pointer overflow-y-auto bg-paper text-black select-none",
         phase === "reveal" && "animate-intro-wipe"
       )}
     >
       {/* Tout le bloc (?, texte, bouton) est centré dans la page */}
       <div className="flex min-h-full flex-col items-center justify-center px-4 py-10 text-center">
-        <div className="flex gap-9">
+        <div className="flex gap-6">
           {colors.map((color, i) => (
             <QuestionMark
               key={i}
               color={color}
               className={cn(
                 "transition-transform duration-400 ease-[steps(4,end)]",
-                leaving && i === 0 && "translate-x-[94px]",
-                leaving && i === 2 && "-translate-x-[94px]"
+                leaving && i === 0 && "translate-x-[64px]",
+                leaving && i === 2 && "-translate-x-[64px]"
               )}
             />
           ))}
         </div>
 
         <div className={cn(leaving && "invisible")}>
-          <p className="mt-[73px] text-[10px] leading-[normal] whitespace-pre-line">
+          <p className="mt-7 max-w-[382px] text-[10px] leading-[normal] whitespace-pre-line">
             {manifesto}
           </p>
           <Button
             onClick={onEnter}
-            className="mt-[26px] h-auto rounded-full bg-black px-4 py-2 text-[10px] leading-[normal] font-medium text-white hover:bg-black/80"
+            className="mt-3.5 h-auto rounded-full bg-black px-4 py-2 text-[10px] leading-[normal] font-medium text-white hover:bg-black/80"
           >
             Enter
           </Button>
@@ -161,8 +163,8 @@ function QuestionMark({
   return (
     <svg
       aria-hidden
-      width="58.1534"
-      height="89.0473"
+      width="39.6535"
+      height="60.7195"
       viewBox="0 0 58.1534 89.0473"
       fill={color}
       className={cn("block", className)}

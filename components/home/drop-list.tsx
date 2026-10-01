@@ -66,7 +66,7 @@ export function DropList() {
               aria-hidden
               width={32}
               height={32}
-              className="size-6 md:size-8"
+              className="size-4 md:size-5"
             />
           </span>
         </a>
