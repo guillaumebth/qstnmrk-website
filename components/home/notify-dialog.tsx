@@ -70,8 +70,10 @@ const schema = z
 
 type FormValues = z.infer<typeof schema>
 
+// Sur mobile, le texte tapé est en 16px : en dessous, Safari iPhone zoome sur le champ.
+// Les placeholders restent en 10px pour garder le style du site.
 const field =
-  "h-7 w-full rounded-full bg-paper px-4 text-center text-[10px] leading-[normal] outline-none placeholder:text-[#a4a4a4] placeholder:uppercase focus-visible:ring-1 focus-visible:ring-black aria-invalid:ring-1 aria-invalid:ring-[#e20000]"
+  "h-9 w-full rounded-full bg-paper px-4 text-center text-base leading-[normal] placeholder:text-[10px] md:h-7 md:text-[10px] outline-none placeholder:text-[#a4a4a4] placeholder:uppercase focus-visible:ring-1 focus-visible:ring-black aria-invalid:ring-1 aria-invalid:ring-[#e20000]"
 
 export function NotifyDialog() {
   return (
@@ -131,7 +133,7 @@ function NotifyPanel() {
             We&apos;ll let you know before the next drop.
           </DialogDescription>
           <DialogClose asChild>
-            <Button className="mt-6 h-7 w-full rounded-full bg-black text-[10px] font-medium text-white uppercase hover:bg-black/80">
+            <Button className="mt-6 h-9 w-full rounded-full bg-black text-[10px] font-medium text-white uppercase hover:bg-black/80 md:h-7">
               Close
             </Button>
           </DialogClose>
@@ -171,7 +173,7 @@ function NotifyPanel() {
                   aria-label="Country code"
                   className={cn(
                     field,
-                    "w-[92px] appearance-none pr-7 pl-4 text-left"
+                    "w-[116px] appearance-none pr-7 pl-4 text-left md:w-[92px]"
                   )}
                   {...form.register("countryCode")}
                 >
@@ -224,7 +226,7 @@ function NotifyPanel() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="mt-5 h-7 w-full rounded-full bg-black text-[10px] font-medium text-white uppercase hover:bg-black/80"
+              className="mt-5 h-9 w-full rounded-full bg-black text-[10px] font-medium text-white uppercase hover:bg-black/80 md:h-7"
             >
               Add me to the list
             </Button>
