@@ -1,12 +1,13 @@
 import { DropList } from "@/components/home/drop-list"
+import { EntryAnimation } from "@/components/home/entry-animation"
 import { GlitchWordmark } from "@/components/home/glitch-wordmark"
+import { ManifestoModal } from "@/components/home/manifesto-modal"
+import { NotifyDialog } from "@/components/home/notify-dialog"
 import { Wordmark } from "@/components/home/wordmark"
-import { IntroGate } from "@/components/intro/intro-gate"
-import { Button } from "@/components/ui/button"
 
 export default function Page() {
   return (
-    <IntroGate>
+    <EntryAnimation>
       <main className="flex min-h-svh flex-col bg-paper text-black">
         <header className="flex flex-col items-center px-4 pt-10 text-center">
           <Wordmark variant="small" priority className="w-[87px]" />
@@ -17,10 +18,7 @@ export default function Page() {
           </p>
 
           <div className="mt-4 flex items-center gap-4">
-            {/* TODO : ouvrir la modale d'inscription (pas encore designée) */}
-            <Button className="h-auto rounded-full bg-black px-4 py-2 text-[10px] leading-[normal] font-medium text-white hover:bg-black/80">
-              Notify me of the next drop
-            </Button>
+            <NotifyDialog />
             <a
               href="https://www.instagram.com/qstnmrk__/"
               target="_blank"
@@ -37,7 +35,8 @@ export default function Page() {
         </div>
 
         <DropList />
+        <ManifestoModal />
       </main>
-    </IntroGate>
+    </EntryAnimation>
   )
 }

@@ -16,7 +16,7 @@ const PREVIEW_SIZE = 227
 const rowEnter =
   "fill-mode-backwards group-data-[intro=done]/intro:animate-in group-data-[intro=done]/intro:fade-in group-data-[intro=done]/intro:slide-in-from-top-6 group-data-[intro=reveal]/intro:animate-in group-data-[intro=reveal]/intro:fade-in group-data-[intro=reveal]/intro:slide-in-from-top-6"
 const enterDelay = (i: number) => ({
-  animationDelay: `${250 + i * 60}ms`,
+  animationDelay: `${100 + i * 60}ms`,
   animationDuration: "600ms",
   animationTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
 })

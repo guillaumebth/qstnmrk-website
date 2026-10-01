@@ -14,7 +14,7 @@ const logoMask: CSSProperties = {
   maskRepeat: "no-repeat",
 }
 
-// Le glitch se déclenche au survol, et aussi pendant la transition d'entrée (IntroGate)
+// Le glitch se déclenche au survol, et aussi pendant l'animation d'arrivée (EntryAnimation)
 const layer =
   "pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 group-data-[intro=reveal]/intro:opacity-100 motion-reduce:hidden"
 
