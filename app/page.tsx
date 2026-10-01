@@ -9,29 +9,33 @@ export default function Page() {
   return (
     <EntryAnimation>
       <main className="flex min-h-svh flex-col bg-paper text-black">
-        <header className="flex flex-col items-center px-4 pt-10 text-center">
-          <Wordmark variant="small" priority className="w-[87px]" />
+        {/* Sur mobile, le haut de page fait au moins la moitié de l'écran :
+            la 1re ligne de drop arrive pile au centre, là où elle s'allume */}
+        <div className="flex min-h-[calc(50svh-32px)] flex-1 flex-col md:min-h-0">
+          <header className="flex flex-col items-center px-4 pt-10 text-center">
+            <Wordmark variant="small" priority className="w-[87px]" />
 
-          <p className="mt-3 max-w-[322px] text-[10px] leading-[normal]">
-            WE EXIST TO QUESTION EVERYTHING: SYSTEMS, SOCIETY, POWER, CULTURE,
-            OURSELVES, AND THE ABSURDITY OF MODERN LIFE.
-          </p>
+            <p className="mt-3 max-w-[322px] text-[10px] leading-[normal]">
+              WE EXIST TO QUESTION EVERYTHING: SYSTEMS, SOCIETY, POWER, CULTURE,
+              OURSELVES, AND THE ABSURDITY OF MODERN LIFE.
+            </p>
 
-          <div className="mt-4 flex items-center gap-4">
-            <NotifyDialog />
-            <a
-              href="https://www.instagram.com/qstnmrk__/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] leading-[normal] font-semibold uppercase hover:underline"
-            >
-              Instagram ↗
-            </a>
+            <div className="mt-4 flex items-center gap-4">
+              <NotifyDialog />
+              <a
+                href="https://www.instagram.com/qstnmrk__/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] leading-[normal] font-semibold uppercase hover:underline"
+              >
+                Instagram ↗
+              </a>
+            </div>
+          </header>
+
+          <div className="flex flex-1 items-end px-[0.67%] pt-[53px] pb-7">
+            <GlitchWordmark className="w-full" />
           </div>
-        </header>
-
-        <div className="flex flex-1 items-end px-[0.67%] pt-[53px] pb-7">
-          <GlitchWordmark className="w-full" />
         </div>
 
         <DropList />
