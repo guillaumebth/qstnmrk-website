@@ -14,10 +14,28 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+const description =
+  "We exist to question everything: systems, society, power, culture, ourselves, and the absurdity of modern life."
+
+// Aperçu du site quand on partage le lien (WhatsApp, iMessage, Instagram, X…)
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.qstnmrk.com"),
   title: "QSTNMRK?",
-  description:
-    "We exist to question everything: systems, society, power, culture, ourselves, and the absurdity of modern life.",
+  description,
+  openGraph: {
+    title: "QSTNMRK?",
+    description,
+    url: "/",
+    siteName: "QSTNMRK?",
+    type: "website",
+    images: [{ url: "/OG.png", width: 1200, height: 630, alt: "QSTNMRK?" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QSTNMRK?",
+    description,
+    images: ["/OG.png"],
+  },
 }
 
 export default function RootLayout({
